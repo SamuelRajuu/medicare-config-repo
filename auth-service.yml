@@ -1,13 +1,25 @@
 server:
-  port: 8888
+  port: 8081
 
 spring:
   application:
-    name: config-server
+    name: auth-service
 
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/SamuelRajuu/medicare-config-repo
-          clone-on-start: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/medicare_auth
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  secret: mySecretKeyForJWT12345
+  expiration: 3600000   # 1 hour in milliseconds
