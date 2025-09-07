@@ -7,7 +7,7 @@ spring:
 
 eureka:
   client:
-    register-with-eureka: false   # Server itself does not register
+    register-with-eureka: false   # server does not register with itself
     fetch-registry: false
   server:
     wait-time-in-ms-when-sync-empty: 0
