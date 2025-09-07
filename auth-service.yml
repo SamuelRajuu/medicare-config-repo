@@ -7,6 +7,7 @@ spring:
     username: medicare_user
     password: medicare_pass
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -31,4 +32,4 @@ eureka:
 
 jwt:
   secret: mySuperSecretKey12345
-  expiration: 3600000
+  expiration: 3600000  # in milliseconds
