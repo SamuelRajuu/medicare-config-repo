@@ -4,13 +4,11 @@ server:
 spring:
   application:
     name: auth-service
-
   datasource:
     url: jdbc:postgresql://localhost:5432/medicare_auth
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -20,6 +18,13 @@ spring:
         format_sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
 jwt:
   secret: mySecretKeyForJWT12345
-  expiration: 3600000   # 1 hour in milliseconds
+  expiration: 3600000
